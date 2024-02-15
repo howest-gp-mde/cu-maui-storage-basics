@@ -1,0 +1,44 @@
+[
+  {
+    "question": "What is the command to create a new git repository in the current directory?",
+    "options": [
+      {
+        "text": "git create",
+        "correct": false
+      },
+      {
+        "text": "git new",
+        "correct": false
+      },
+      {
+        "text": "git init",
+        "correct": true
+      },
+      {
+        "text": "git start",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "What is the command to create a new directory named “test” and all its parent directories if they do not exist?",
+    "options": [
+      {
+        "text": "mkdir test",
+        "correct": true
+      },
+      {
+        "text": "mkdir -p test",
+        "correct": false
+      },
+      {
+        "text": "mkdir -n test",
+        "correct": false
+      },
+      {
+        "text": "mkdir --name test",
+        "correct": false
+      }
+    ]
+  }
+]
