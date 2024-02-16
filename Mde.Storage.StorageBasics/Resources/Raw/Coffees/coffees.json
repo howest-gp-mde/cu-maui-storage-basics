@@ -1,0 +1,46 @@
+[
+  {
+    "name": "Espresso",
+    "configuration": {
+      "water": 30,
+      "coffee": 7,
+      "milk": 0,
+      "foam": 5,
+      "pressure": 9,
+      "temperature": 90
+    }
+  },
+  {
+    "name": "Cappuccino",
+    "configuration": {
+      "water": 60,
+      "coffee": 7,
+      "milk": 60,
+      "foam": 20,
+      "pressure": 9,
+      "temperature": 85
+    }
+  },
+  {
+    "name": "Latte",
+    "configuration": {
+      "water": 30,
+      "coffee": 7,
+      "milk": 150,
+      "foam": 10,
+      "pressure": 9,
+      "temperature": 85
+    }
+  },
+  {
+    "name": "Americano",
+    "configuration": {
+      "water": 120,
+      "coffee": 7,
+      "milk": 0,
+      "foam": 0,
+      "pressure": 9,
+      "temperature": 90
+    }
+  }
+]

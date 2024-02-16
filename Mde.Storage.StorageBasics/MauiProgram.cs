@@ -14,12 +14,12 @@ namespace Mde.Storage.StorageBasics
             builder.Services.AddTransient<MainPage>();
             builder.Services.AddTransient<MainViewModel>();
             
-            builder.Services.AddTransient<WalkthroughPage>();
-            builder.Services.AddTransient<WalkthroughViewModel>();
+            builder.Services.AddTransient<CoffeeListPage>();
+            builder.Services.AddTransient<CoffeeListViewModel>();
 
-            Routing.RegisterRoute(nameof(WalkthroughPage), typeof(WalkthroughPage));
+            Routing.RegisterRoute(nameof(CoffeeListPage), typeof(CoffeeListPage));
 
-            builder.Services.AddTransient<IWalkthroughService, AppPackageWalkthroughService>();
+            builder.Services.AddTransient<ICoffeeService, AppPackageCoffeeService>();
 
 
             builder

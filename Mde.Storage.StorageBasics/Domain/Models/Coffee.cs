@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace Mde.Storage.StorageBasics.Domain.Models
 {
-    public class FlashCard
+    public class Coffee
     {
-        public string Question { get; set; }
-        public List<Answer> Options { get; set; }
+        public string Name { get; set; }
+        public CoffeeConfiguration Configuration { get; set; }
     }
 }

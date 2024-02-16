@@ -9,11 +9,10 @@
             Spacing="25">
 
             <Button
-                Text="Walkthrough" 
-                SemanticProperties.Hint="Walkthrough - help with using the app"
-                Command="{Binding NavigateToWalkThroughPageCommand}"
-                HorizontalOptions="Fill"
-                />
+                Text="Coffees" 
+                SemanticProperties.Hint="The coffees this our machine can brew"
+                Command="{Binding NavigateToCoffeeListPageCommand}"
+                HorizontalOptions="Fill" />
         </VerticalStackLayout>
     </ScrollView>
 

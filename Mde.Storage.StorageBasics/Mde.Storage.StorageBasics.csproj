@@ -57,7 +57,7 @@
 	</ItemGroup>
 
 	<ItemGroup>
-	  <None Remove="Resources\Raw\Walkthrough\demodata.json" />
+	  <None Remove="Resources\Raw\Coffees\coffees.json" />
 	</ItemGroup>
 
 	<ItemGroup>
@@ -68,13 +68,19 @@
 	</ItemGroup>
 
 	<ItemGroup>
-	  <MauiAsset Update="Resources\Raw\Walkthrough\demodata.json">
+	  <Compile Update="Pages\CoffeeListPage.xaml.cs">
+	    <DependentUpon>CoffeeListPage.xaml</DependentUpon>
+	  </Compile>
+	</ItemGroup>
+
+	<ItemGroup>
+	  <MauiAsset Update="Resources\Raw\Coffees\coffees.json">
 	    <CopyToOutputDirectory>Always</CopyToOutputDirectory>
 	  </MauiAsset>
 	</ItemGroup>
 
 	<ItemGroup>
-	  <MauiXaml Update="Pages\WalkthroughPage.xaml">
+	  <MauiXaml Update="Pages\CoffeeListPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	</ItemGroup>

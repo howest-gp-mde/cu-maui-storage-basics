@@ -2,16 +2,17 @@ using Mde.Storage.StorageBasics.ViewModels;
 
 namespace Mde.Storage.StorageBasics.Pages;
 
-public partial class WalkthroughPage : ContentPage
+public partial class CoffeeListPage : ContentPage
 {
-	public WalkthroughPage()
+	public CoffeeListPage(CoffeeListViewModel viewmodel)
 	{
 		InitializeComponent();
+        BindingContext = viewmodel;
 	}
 
     protected override void OnAppearing()
     {
-        var viewmodel = BindingContext as WalkthroughViewModel;
+        var viewmodel = BindingContext as CoffeeListViewModel;
         viewmodel?.OnAppearing?.Execute(null);
     }
 }

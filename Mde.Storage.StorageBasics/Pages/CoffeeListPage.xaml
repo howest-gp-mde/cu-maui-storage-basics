@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Mde.Storage.StorageBasics.Pages.CoffeeListPage"
+             Title="Coffees">
+    <VerticalStackLayout>
+
+        <Label Text="This is a list of all the coffees our machines can brew:"></Label>
+        
+        <CollectionView ItemsSource="{Binding Coffees}">
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <ContentView>
+                        <Label Text="{Binding Name}"></Label>
+                    </ContentView>
+
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+            
+        </CollectionView>
+    </VerticalStackLayout>
+</ContentPage>

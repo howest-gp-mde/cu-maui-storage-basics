@@ -12,10 +12,10 @@ namespace Mde.Storage.StorageBasics.ViewModels
 {
     public partial class MainViewModel : ObservableObject
     {
-        public ICommand NavigateToWalkThroughPageCommand => new Command(async () => await NavigateToWalkTroughPage());
-        public async Task NavigateToWalkTroughPage()
+        public ICommand NavigateToCoffeeListPageCommand => new Command(async () => await NavigateToCoffeeListPage());
+        public async Task NavigateToCoffeeListPage()
         {
-            await Shell.Current.GoToAsync(nameof(WalkthroughPage));
+            await Shell.Current.GoToAsync(nameof(CoffeeListPage));
         }
     }
 }
