@@ -13,6 +13,7 @@ namespace Mde.Storage.StorageBasics.Domain.Services
     {
         const string filename = "logs.json";
         static string logfilePath = Path.Combine(FileSystem.Current.AppDataDirectory, filename);
+
         public IEnumerable<LogEntry> GetLogs()
         {
             if (File.Exists(logfilePath))
@@ -39,5 +40,11 @@ namespace Mde.Storage.StorageBasics.Domain.Services
 
             File.WriteAllText(logfilePath, serializedLogs);
         }
+
+        public void Clear()
+        {
+            if (File.Exists(logfilePath)) File.Delete(logfilePath);
+        }
+
     }
 }

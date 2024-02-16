@@ -11,5 +11,6 @@ namespace Mde.Storage.StorageBasics.Domain.Services
     {
         void Log(Coffee coffee);
         IEnumerable<LogEntry> GetLogs();
+        void Clear();
     }
 }

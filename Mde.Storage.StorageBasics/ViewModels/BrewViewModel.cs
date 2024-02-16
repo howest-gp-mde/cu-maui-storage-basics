@@ -35,6 +35,7 @@ namespace Mde.Storage.StorageBasics.ViewModels
 
         public ICommand OnAppearing => new Command(async () => await Refresh());
         public ICommand BrewCommand => new Command(async ()  => await Brew());
+        public ICommand ClearLogCommand => new Command(async ()  => await ClearLog());
         public BrewViewModel(ICoffeeService coffeeService, ICoffeeLoggingService coffeeLoggingService)
         {
             this.coffeeService = coffeeService;
@@ -54,6 +55,12 @@ namespace Mde.Storage.StorageBasics.ViewModels
         public async Task Brew()
         {
             coffeeLoggingService.Log(SelectedCoffee);
+            await Refresh();
+        }
+
+        public async Task ClearLog()
+        {
+            coffeeLoggingService.Clear();
             await Refresh();
         }
     }

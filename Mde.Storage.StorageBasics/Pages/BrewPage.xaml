@@ -3,6 +3,10 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Mde.Storage.StorageBasics.Pages.BrewPage"
              Title="BrewPage">
+
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Clear log" Command="{Binding ClearLogCommand}"></ToolbarItem>
+    </ContentPage.ToolbarItems>
     <VerticalStackLayout>
         
         <Picker 
