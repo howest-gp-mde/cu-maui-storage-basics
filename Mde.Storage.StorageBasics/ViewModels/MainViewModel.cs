@@ -13,9 +13,15 @@ namespace Mde.Storage.StorageBasics.ViewModels
     public partial class MainViewModel : ObservableObject
     {
         public ICommand NavigateToCoffeeListPageCommand => new Command(async () => await NavigateToCoffeeListPage());
+        public ICommand NavigateToBrewPageCommand => new Command(async () => await NavigateToBrewPage());
         public async Task NavigateToCoffeeListPage()
         {
             await Shell.Current.GoToAsync(nameof(CoffeeListPage));
+        }
+
+        public async Task NavigateToBrewPage()
+        {
+            await Shell.Current.GoToAsync(nameof(BrewPage));
         }
     }
 }

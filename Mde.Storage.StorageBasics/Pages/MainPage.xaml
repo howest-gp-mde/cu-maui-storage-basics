@@ -13,6 +13,12 @@
                 SemanticProperties.Hint="The coffees this our machine can brew"
                 Command="{Binding NavigateToCoffeeListPageCommand}"
                 HorizontalOptions="Fill" />
+
+            <Button
+                 Text="Brew a coffee" 
+                 SemanticProperties.Hint="Brew a coffee"
+                 Command="{Binding NavigateToBrewPageCommand}"
+                 HorizontalOptions="Fill" />
         </VerticalStackLayout>
     </ScrollView>
 
