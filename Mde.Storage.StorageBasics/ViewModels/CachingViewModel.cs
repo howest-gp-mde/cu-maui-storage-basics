@@ -1,6 +1,7 @@
 ﻿using CommunityToolkit.Mvvm.ComponentModel;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -29,7 +30,21 @@ namespace Mde.Storage.StorageBasics.ViewModels
         { 
             get { return  cachedImageSource; }
             set { SetProperty(ref cachedImageSource, value); }
-        } 
+        }
+
+        private ObservableCollection<string> cachedFiles;
+
+        public ObservableCollection<string> CachedFiles
+        {
+            get { return cachedFiles; }
+            set { SetProperty(ref cachedFiles, value); }
+        }
+
+        public CachingViewModel()
+        {
+            DisplayCachedFiles();
+        }
+
 
         public ICommand RefreshCommand => new Command(() => {
             IsRefreshing = true;
@@ -42,7 +57,40 @@ namespace Mde.Storage.StorageBasics.ViewModels
                 CacheValidity = TimeSpan.FromSeconds(30)
             };
 
+            DisplayCachedFiles();
+
             IsRefreshing = false;
         } );
+
+        public void DisplayCachedFiles()
+        {
+            //WinUI does not cache images, prevent code from running on windows, iOS not tested yet ...
+            if (DeviceInfo.Current.Platform != DevicePlatform.Android) 
+            { 
+                CachedFiles = null;
+                return;
+            };
+
+            var path = FileSystem.CacheDirectory;
+
+            //var contents = Directory.EnumerateFiles(path).ToList();
+            var subdirs = Directory.EnumerateDirectories(path).ToList();
+
+            if(subdirs.Count > 0 )
+            {
+                var imagecachedir = subdirs.FirstOrDefault(); // /data/user/0/com.companyname.mde.storage.storagebasics/cache/image_manager_disk_cache
+                var imageCachePaths = Directory.GetFiles(imagecachedir).ToList();
+
+                List<string> cachedImages = new List<string>();
+                foreach (string fullPath in imageCachePaths)
+                {
+                    string filename = Path.GetFileName(fullPath);
+                    cachedImages.Add(filename);
+                }
+
+                CachedFiles = new ObservableCollection<string>(cachedImages);
+            }
+
+        }
     }
 }

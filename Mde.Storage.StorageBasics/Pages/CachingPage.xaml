@@ -4,6 +4,10 @@
              x:Class="Mde.Storage.StorageBasics.Pages.CachingPage"
              Title="CachingPage">
 
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Refresh" Command="{Binding RefreshCommand}"></ToolbarItem>
+    </ContentPage.ToolbarItems>
+
     <RefreshView IsRefreshing="{Binding IsRefreshing}" Command="{Binding RefreshCommand}">
         <ScrollView>
             <StackLayout>
@@ -26,7 +30,18 @@
                     </Image.Source>
                 </Image>
 
-                <Image Source="{Binding CachedImageSource}"></Image>
+                <Image WidthRequest="100" Source="{Binding CachedImageSource}"></Image>
+
+                <CollectionView ItemsSource="{Binding CachedFiles}">
+                    <CollectionView.EmptyView>
+                        <Label>Nothing in the cache ...</Label>
+                    </CollectionView.EmptyView>
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate>
+                            <Label Text="{Binding .}"></Label>
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
+                </CollectionView>
 
             </StackLayout>
         </ScrollView>
