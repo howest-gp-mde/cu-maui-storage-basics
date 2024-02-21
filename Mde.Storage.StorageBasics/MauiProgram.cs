@@ -1,4 +1,5 @@
-﻿using Mde.Storage.StorageBasics.Domain.Services;
+﻿using FFImageLoading.Maui;
+using Mde.Storage.StorageBasics.Domain.Services;
 using Mde.Storage.StorageBasics.Pages;
 using Mde.Storage.StorageBasics.ViewModels;
 using Microsoft.Extensions.Logging;
@@ -33,6 +34,7 @@ namespace Mde.Storage.StorageBasics
 
             builder
                 .UseMauiApp<App>()
+                .UseFFImageLoading()
                 .ConfigureFonts(fonts =>
                 {
                     fonts.AddFont("OpenSans-Regular.ttf", "OpenSansRegular");
