@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Mde.Storage.StorageBasics.Pages.CachingPage"
+             Title="CachingPage">
+    <VerticalStackLayout>
+        <Image>
+            <Image.Source>
+                <UriImageSource Uri="https://www.howest.be/fs/styles/full_banner/public/images/49314368393_367b9c7282_k.jpg"
+                        CacheValidity="10:00:00" />
+            </Image.Source>
+        </Image>
+    </VerticalStackLayout>
+</ContentPage>

@@ -19,6 +19,13 @@
                  SemanticProperties.Hint="Brew a coffee"
                  Command="{Binding NavigateToBrewPageCommand}"
                  HorizontalOptions="Fill" />
+
+            <Button
+                 Text="Caching" 
+                 SemanticProperties.Hint="Caching"
+                 Command="{Binding NavigateToCachingPageCommand}"
+                 HorizontalOptions="Fill" />
+            
         </VerticalStackLayout>
     </ScrollView>
 
