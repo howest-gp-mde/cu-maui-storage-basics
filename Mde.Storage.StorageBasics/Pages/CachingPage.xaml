@@ -3,15 +3,32 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Mde.Storage.StorageBasics.Pages.CachingPage"
              Title="CachingPage">
-    <VerticalStackLayout>
-        <Image>
-            <Image.Source>
-                <UriImageSource 
-                    Uri="https://www.howest.be/fs/styles/full_banner/public/images/49314368393_367b9c7282_k.jpg"
-                    CachingEnabled="True"
-                    CacheValidity="1.10:00:00"
-                    />
-            </Image.Source>
-        </Image>
-    </VerticalStackLayout>
+
+    <RefreshView IsRefreshing="{Binding IsRefreshing}" Command="{Binding RefreshCommand}">
+        <ScrollView>
+            <StackLayout>
+                
+                <Label>
+                    <Label.FormattedText>
+                        <FormattedString>
+                            <Span Text="Last page visit at: "></Span>
+                            <Span TextColor="{StaticResource Primary}" Text="{Binding LastUpdate}"></Span>
+                        </FormattedString>
+                    </Label.FormattedText>
+                </Label>
+
+                <Image WidthRequest="100">
+                    <Image.Source>
+                        <UriImageSource 
+                            Uri="https://picsum.photos/200/300"
+                            CachingEnabled="True"
+                            CacheValidity="00:00:30" />
+                    </Image.Source>
+                </Image>
+
+                <Image Source="{Binding CachedImageSource}"></Image>
+
+            </StackLayout>
+        </ScrollView>
+    </RefreshView>
 </ContentPage>
