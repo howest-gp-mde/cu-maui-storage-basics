@@ -9,7 +9,7 @@
         <Image>
             <Image.Source>
                 <UriImageSource 
-                    Uri="https://www.howest.be/fs/styles/full_banner/public/images/49314368393_367b9c7282_k.jpg"
+                    Uri="https://picsum.photos/200/300"
                     CachingEnabled="True"
                     CacheValidity="1.10:00:00"
                     />
@@ -17,7 +17,7 @@
         </Image>
 
         <Label Text="Third party approaching using FFImageLoading.Maui:"></Label>
-        <ffimageloading:CachedImage CacheDuration="00:00:30" Source="https://www.howest.be/fs/styles/full_banner/public/images/49314368393_367b9c7282_k.jpg" />
+        <ffimageloading:CachedImage Source="https://picsum.photos/200/300" />
 
     </VerticalStackLayout>
 </ContentPage>
