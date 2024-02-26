@@ -1,9 +1,13 @@
-﻿using FFImageLoading.Maui;
+﻿using CommunityToolkit.Maui;
+using FFImageLoading.Maui;
 using Mde.Storage.StorageBasics.Domain.Services;
 using Mde.Storage.StorageBasics.Pages;
 using Mde.Storage.StorageBasics.ViewModels;
 using Microsoft.Extensions.Logging;
 
+#if IOS
+using AVFoundation;
+#endif
 namespace Mde.Storage.StorageBasics
 {
     public static class MauiProgram
@@ -43,10 +47,17 @@ namespace Mde.Storage.StorageBasics
                 {
                     fonts.AddFont("OpenSans-Regular.ttf", "OpenSansRegular");
                     fonts.AddFont("OpenSans-Semibold.ttf", "OpenSansSemibold");
-                });
+                })
+                .UseMauiCommunityToolkit()
+                .UseMauiCommunityToolkitMediaElement();
 
 #if DEBUG
     		builder.Logging.AddDebug();
+#endif
+
+#if IOS
+            AVAudioSession.SharedInstance().SetActive(true);
+            AVAudioSession.SharedInstance().SetCategory(AVAudioSessionCategory.Playback);
 #endif
 
             return builder.Build();

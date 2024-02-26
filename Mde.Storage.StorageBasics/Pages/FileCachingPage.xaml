@@ -2,6 +2,7 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Mde.Storage.StorageBasics.Pages.FileCachingPage"
+             xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
              Title="FileCachingPage">
     <VerticalStackLayout>
         <Label>Big Buck Bunny</Label>
@@ -12,6 +13,10 @@
             It is then downloaded to the cache folder of you device, which means that the operating can download
             the file any time when it sees fit.
         </Label>
+
+
+        <toolkit:MediaElement />
+        
         <Button Text="Download file" />
     </VerticalStackLayout>
 </ContentPage>
