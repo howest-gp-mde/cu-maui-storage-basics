@@ -21,11 +21,17 @@
                  HorizontalOptions="Fill" />
 
             <Button
-                 Text="Caching" 
-                 SemanticProperties.Hint="Caching"
-                 Command="{Binding NavigateToCachingPageCommand}"
+                 Text="Image caching" 
+                 SemanticProperties.Hint="Image caching"
+                 Command="{Binding NavigateToImageCachingPageCommand}"
                  HorizontalOptions="Fill" />
-            
+
+            <Button
+                 Text="File caching" 
+                 SemanticProperties.Hint="Image caching"
+                 Command="{Binding NavigateToFileCachingPageCommand}"
+                 HorizontalOptions="Fill" />
+
         </VerticalStackLayout>
     </ScrollView>
 

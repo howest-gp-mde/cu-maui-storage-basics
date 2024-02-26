@@ -61,6 +61,8 @@
 	</ItemGroup>
 
 	<ItemGroup>
+		<PackageReference Include="CommunityToolkit.Maui" Version="7.0.1" />
+		<PackageReference Include="CommunityToolkit.Maui.MediaElement" Version="3.0.1" />
 		<PackageReference Include="CommunityToolkit.Mvvm" Version="8.2.2" />
 		<PackageReference Include="FFImageLoading.Maui" Version="1.0.9" />
 		<PackageReference Include="Microsoft.Maui.Controls" Version="$(MauiVersion)" />
@@ -85,6 +87,9 @@
 
 	<ItemGroup>
 	  <MauiXaml Update="Pages\BrewPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Pages\FileCachingPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="Pages\ImageCachingPage.xaml">

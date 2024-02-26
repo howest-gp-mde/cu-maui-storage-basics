@@ -24,9 +24,13 @@ namespace Mde.Storage.StorageBasics
             builder.Services.AddTransient<ImageCachingPage>();
             builder.Services.AddTransient<ImageCachingViewModel>();
 
+            builder.Services.AddTransient<FileCachingPage>();
+            builder.Services.AddTransient<FileCachingViewModel>();
+
             Routing.RegisterRoute(nameof(CoffeeListPage), typeof(CoffeeListPage));
             Routing.RegisterRoute(nameof(BrewPage), typeof(BrewPage));
             Routing.RegisterRoute(nameof(ImageCachingPage), typeof(ImageCachingPage));
+            Routing.RegisterRoute(nameof(FileCachingPage), typeof(FileCachingPage));
 
             builder.Services.AddTransient<ICoffeeService, AppPackageCoffeeService>();
             builder.Services.AddTransient<ICoffeeLoggingService, LocalLoggingService>();

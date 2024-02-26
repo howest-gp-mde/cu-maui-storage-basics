@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Mde.Storage.StorageBasics.Pages.FileCachingPage"
+             Title="FileCachingPage">
+    <VerticalStackLayout>
+        <Label>Big Buck Bunny</Label>
+        <Label>
+            The Big Buck Bunny animation film was released under the CC license and is used in this exercise.
+            You can download the movie to disk by clicking on the 'download file' button.
+            
+            It is then downloaded to the cache folder of you device, which means that the operating can download
+            the file any time when it sees fit.
+        </Label>
+        <Button Text="Download file" />
+    </VerticalStackLayout>
+</ContentPage>

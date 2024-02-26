@@ -14,7 +14,8 @@ namespace Mde.Storage.StorageBasics.ViewModels
     {
         public ICommand NavigateToCoffeeListPageCommand => new Command(async () => await NavigateToCoffeeListPage());
         public ICommand NavigateToBrewPageCommand => new Command(async () => await NavigateToBrewPage());
-        public ICommand NavigateToCachingPageCommand => new Command(async () => await NavigateToCachingPage());
+        public ICommand NavigateToImageCachingPageCommand => new Command(async () => await NavigateToImageCachingPage());
+        public ICommand NavigateToFileCachingPageCommand => new Command(async () => await NavigateToFileCachingPage());
         public async Task NavigateToCoffeeListPage()
         {
             await Shell.Current.GoToAsync(nameof(CoffeeListPage));
@@ -25,9 +26,13 @@ namespace Mde.Storage.StorageBasics.ViewModels
             await Shell.Current.GoToAsync(nameof(BrewPage));
         }        
         
-        public async Task NavigateToCachingPage()
+        public async Task NavigateToImageCachingPage()
         {
             await Shell.Current.GoToAsync(nameof(ImageCachingPage));
+        }
+        public async Task NavigateToFileCachingPage()
+        {
+            await Shell.Current.GoToAsync(nameof(FileCachingPage));
         }
     }
 }
