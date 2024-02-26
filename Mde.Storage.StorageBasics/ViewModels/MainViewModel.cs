@@ -27,7 +27,7 @@ namespace Mde.Storage.StorageBasics.ViewModels
         
         public async Task NavigateToCachingPage()
         {
-            await Shell.Current.GoToAsync(nameof(CachingPage));
+            await Shell.Current.GoToAsync(nameof(ImageCachingPage));
         }
     }
 }

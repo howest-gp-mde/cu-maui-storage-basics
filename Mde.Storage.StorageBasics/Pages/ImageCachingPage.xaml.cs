@@ -2,9 +2,9 @@ using Mde.Storage.StorageBasics.ViewModels;
 
 namespace Mde.Storage.StorageBasics.Pages;
 
-public partial class CachingPage : ContentPage
+public partial class ImageCachingPage : ContentPage
 {
-	public CachingPage(CachingViewModel viewmodel)
+	public ImageCachingPage(ImageCachingViewModel viewmodel)
 	{
 		InitializeComponent();
 		BindingContext = viewmodel;

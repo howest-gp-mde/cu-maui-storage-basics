@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="Mde.Storage.StorageBasics.Pages.CachingPage"
+             x:Class="Mde.Storage.StorageBasics.Pages.ImageCachingPage"
              xmlns:ffimageloading="clr-namespace:FFImageLoading.Maui;assembly=FFImageLoading.Maui"
              Title="CachingPage">
     <VerticalStackLayout>
         <Label Text="Built-in MAUI approach (does not work on Windows)"></Label>
-        <Image>
+        <Image WidthRequest="100" HorizontalOptions="Start">
             <Image.Source>
                 <UriImageSource 
                     Uri="https://picsum.photos/200/300"
@@ -17,7 +17,7 @@
         </Image>
 
         <Label Text="Third party approaching using FFImageLoading.Maui:"></Label>
-        <ffimageloading:CachedImage Source="https://picsum.photos/200/300" />
+        <ffimageloading:CachedImage Source="https://picsum.photos/200/300" WidthRequest="100" HorizontalOptions="Start"/>
 
     </VerticalStackLayout>
 </ContentPage>

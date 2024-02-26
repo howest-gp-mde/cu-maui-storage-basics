@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Mde.Storage.StorageBasics.ViewModels
 {
-    public partial class CachingViewModel : ObservableObject
+    public partial class ImageCachingViewModel : ObservableObject
     {
 
     }
