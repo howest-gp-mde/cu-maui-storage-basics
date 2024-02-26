@@ -38,6 +38,7 @@ namespace Mde.Storage.StorageBasics
 
             builder.Services.AddTransient<ICoffeeService, AppPackageCoffeeService>();
             builder.Services.AddTransient<ICoffeeLoggingService, LocalLoggingService>();
+            builder.Services.AddTransient<IVideoService, CacheVideoService>();
 
 
             builder
