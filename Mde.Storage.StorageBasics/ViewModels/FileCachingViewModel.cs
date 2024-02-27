@@ -1,7 +1,9 @@
 ﻿using CommunityToolkit.Maui;
 using CommunityToolkit.Maui.Views;
 using CommunityToolkit.Mvvm.ComponentModel;
+using CommunityToolkit.Mvvm.Messaging;
 using Mde.Storage.StorageBasics.Domain.Services;
+using Mde.Storage.StorageBasics.Messages;
 using Mde.Storage.StorageBasics.Popups.ViewModels;
 using System;
 using System.Collections.Generic;
@@ -29,37 +31,37 @@ namespace Mde.Storage.StorageBasics.ViewModels
             }
         }
         public ICommand OnAppearingCommand => new Command(async () => await InitializePage());
-        public ICommand DownloadVideoCommand => new Command(async () => await DownloadVideo());
 
         public FileCachingViewModel(IVideoService videoService)
         {
             this.videoService = videoService;
-            VideoSource = MediaSource.FromUri(Constants.VideoUrl);
+
+            WeakReferenceMessenger.Default.Register<PopupMessage>(this, async (recipient, popupMessage) =>
+            {
+                if (popupMessage.Value == "yes")
+                {
+                    await videoService.DownloadVideo();
+                    VideoSource = MediaSource.FromFile(videoService.GetCachedVideoPath());
+                }
+                else if (popupMessage.Value == "no")
+                {
+                    VideoSource = MediaSource.FromUri(Constants.VideoUrl);
+                }
+            });
         }
 
         private async Task InitializePage()
         {
+            if (!videoService.VideoIsCached())
+            {
+                var popupService = new PopupService();
+                await popupService.ShowPopupAsync<ConfirmPopupViewModel>();
+            }
+            else
+            {
+                VideoSource = MediaSource.FromFile(videoService.GetCachedVideoPath());
+            }
 
-        }
-
-        private async Task DownloadVideo()
-        {
-
-            var popupService = new PopupService();
-            await popupService.ShowPopupAsync<ConfirmPopupViewModel>();
-
-            var fileIsCached = videoService.CheckIfCached(Constants.VideoUrl);
-
-            //if (!fileIsCached)
-            //{
-            //    await videoService.DownloadVideo("BigBuckBunny_320x180.mp4", Constants.VideoUrl);
-            //}
-            //else
-            //{
-            //    //get from cache
-            //}
-
-            //always load from disk
 
         }
     }

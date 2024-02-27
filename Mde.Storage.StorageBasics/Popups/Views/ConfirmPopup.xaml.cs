@@ -14,15 +14,6 @@ public partial class ConfirmPopup : Popup
 
         WeakReferenceMessenger.Default.Register<PopupMessage>(this, (recipient, popupMessage) =>
         {
-            if (popupMessage.Value == "yes")
-            {
-
-            }
-            else if(popupMessage.Value == "no")
-            {
-
-            }
-
             //always close
             this.Close();
         });

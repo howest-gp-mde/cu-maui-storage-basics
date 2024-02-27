@@ -7,11 +7,11 @@
     xmlns:vms="clr-namespace:Mde.Storage.StorageBasics.Popups.ViewModels"
     x:DataType="vms:ConfirmPopupViewModel"
     CanBeDismissedByTappingOutsideOfPopup="False">
-    <Frame BorderColor="{StaticResource Primary}">
-            <StackLayout>
+    <Border Stroke="{StaticResource Primary}" StrokeThickness="1">
+            <VerticalStackLayout Spacing="20" Padding="20">
                 <Label>Do you want store the video in cache, so that you don't have to download it again or can watch it offline?</Label>
                 <Button Text="Yes" Command="{Binding OnYesCommand}"></Button>
                 <Button Text="No" Command="{Binding OnNoCommand}"></Button>
-            </StackLayout>
-    </Frame>
+            </VerticalStackLayout>
+    </Border>
 </toolkit:Popup>

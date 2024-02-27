@@ -9,8 +9,8 @@ namespace Mde.Storage.StorageBasics.Domain.Services
 {
     public interface IVideoService
     {
-        Task DownloadVideo(string filename, string url);
-        bool CheckIfCached(string filename);
-        MediaSource GetMediaSource(string filename);
+        Task DownloadVideo();
+        bool VideoIsCached();
+        string GetCachedVideoPath();
     }
 }

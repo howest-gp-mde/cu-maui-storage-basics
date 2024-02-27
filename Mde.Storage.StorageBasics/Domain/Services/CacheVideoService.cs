@@ -11,20 +11,26 @@ namespace Mde.Storage.StorageBasics.Domain.Services
 {
     public class CacheVideoService : IVideoService
     {
-        private static string CacheDir = FileSystem.Current.CacheDirectory;
+        private static readonly string cacheDir = FileSystem.Current.CacheDirectory;
 
-        public bool CheckIfCached(string filename)
+        public bool VideoIsCached()
         {
-            //todo
-            return false;
+            List<string> allFiles = Directory
+                .EnumerateFiles(cacheDir)
+                .Select(Path.GetFileName)
+                .ToList();
+
+            bool isCached = allFiles.Contains(Constants.VideoFile);
+
+            return isCached;
         }
 
-        public async Task DownloadVideo(string filename, string url)
+        public async Task DownloadVideo()
         {
             HttpClient httpClient = new HttpClient();
-            using (var stream = await httpClient.GetStreamAsync(url))
+            using (var stream = await httpClient.GetStreamAsync(Constants.VideoUrl))
             {
-                var filePath = Path.Combine(CacheDir, filename);
+                var filePath = Path.Combine(cacheDir, Constants.VideoFile);
                 using (var fileStream = new FileStream(filePath, FileMode.Create))
                 {
                     await stream.CopyToAsync(fileStream);
@@ -32,9 +38,9 @@ namespace Mde.Storage.StorageBasics.Domain.Services
             }
         }
 
-        public MediaSource GetMediaSource(string filename)
+        public string GetCachedVideoPath()
         {
-            throw new NotImplementedException();
+            return Path.Combine(cacheDir, Constants.VideoFile);
         }
     }
 }

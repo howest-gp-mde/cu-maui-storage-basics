@@ -17,7 +17,5 @@
 
         <toolkit:MediaElement Source="{Binding VideoSource}" />
 
-        <Button Command="{Binding DownloadVideoCommand}" Text="Download file"/>
-
     </VerticalStackLayout>
 </ContentPage>
