@@ -3,19 +3,12 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Mde.Storage.StorageBasics.Pages.FileCachingPage"
              xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
-             Title="FileCachingPage">
-    <VerticalStackLayout>
-        <Label>Big Buck Bunny</Label>
-        <Label>
-            The Big Buck Bunny animation film was released under the CC license and is used in this exercise.
-            You can download the movie to disk by clicking on the 'download file' button.
-            
-            It is then downloaded to the cache folder of you device, which means that the operating can download
-            the file any time when it sees fit.
-        </Label>
-
-
-        <toolkit:MediaElement Source="{Binding VideoSource}" WidthRequest="400" HeightRequest="300" />
-
+             Title="Coffee Run"
+             Unloaded="ContentPage_Unloaded">
+    <VerticalStackLayout Spacing="20" Padding="20">
+        <Label>'Coffee Run' animation film was released under the CC license and is used in this exercise. You can download the movie to disk by clicking on the 'download file' button. It is then downloaded to the cache folder of you device, which means that the operating can delete the file any time when it sees fit.</Label>
+        <Label>'Coffee Run' was directed by Hjalti Hjalmarsson and produced by the team at Blender Studio. Fueled by caffeine, a young woman runs through the bittersweet memories of her past relationship.</Label>
+        <Label>Interested in other open films? Head over to https://studio.blender.org/films. Only interested in this one? You can find it here: https://studio.blender.org/films/coffee-run!</Label> 
+        <toolkit:MediaElement x:Name="mediaElement" Source="{Binding VideoSource}" WidthRequest="400" HeightRequest="300" />
     </VerticalStackLayout>
 </ContentPage>

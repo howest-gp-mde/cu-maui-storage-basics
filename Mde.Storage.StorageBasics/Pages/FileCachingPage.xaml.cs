@@ -16,4 +16,9 @@ public partial class FileCachingPage : ContentPage
 
         (BindingContext as FileCachingViewModel).OnAppearingCommand.Execute(null);
     }
+
+    private void ContentPage_Unloaded(object sender, EventArgs e)
+    {
+        mediaElement.Handler?.DisconnectHandler();
+    }
 }

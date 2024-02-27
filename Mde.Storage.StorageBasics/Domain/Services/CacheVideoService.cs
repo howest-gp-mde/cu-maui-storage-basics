@@ -1,13 +1,4 @@
-﻿using CommunityToolkit.Maui.Views;
-using Microsoft.Maui.Storage;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Net;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Mde.Storage.StorageBasics.Domain.Services
+﻿namespace Mde.Storage.StorageBasics.Domain.Services
 {
     public class CacheVideoService : IVideoService
     {
@@ -28,6 +19,8 @@ namespace Mde.Storage.StorageBasics.Domain.Services
         public async Task DownloadVideo()
         {
             HttpClient httpClient = new HttpClient();
+            httpClient.DefaultRequestHeaders.UserAgent.ParseAdd("StorageBasicsDemoApp"); //https://meta.wikimedia.org/wiki/User-Agent_policy
+
             using (var stream = await httpClient.GetStreamAsync(Constants.VideoUrl))
             {
                 var filePath = Path.Combine(cacheDir, Constants.VideoFile);

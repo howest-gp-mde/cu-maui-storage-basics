@@ -8,7 +8,7 @@ namespace Mde.Storage.StorageBasics
 {
     public static class Constants
     {
-        public const string VideoFile = "BigBuckBunny_320x180.mp4";
-        public const string VideoUrl = "https://download.blender.org/peach/bigbuckbunny_movies/BigBuckBunny_320x180.mp4";
+        public const string VideoFile = "CoffeeRun.webm";
+        public const string VideoUrl = "https://upload.wikimedia.org/wikipedia/commons/3/3f/Coffee_Run_-_Blender_Open_Movie-full_movie.webm";
     }
 }
