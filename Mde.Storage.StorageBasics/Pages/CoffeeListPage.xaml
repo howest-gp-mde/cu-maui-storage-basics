@@ -5,8 +5,11 @@
              Title="🫘 Coffee options (Reading data from app package)">
     <VerticalStackLayout>
 
-        <Label Text="This is a list of all the coffees our machines can brew:"></Label>
-        
+        <Border Style="{StaticResource Info}">
+            <Label> This page displays a list of all the coffees our machines can brew. Because our coffee machine has a predetermined set of coffees it can brew, we made the (rightful) decision to store a list of all the coffee options in the app package. This means that when a users downloads the app, they download the list with it. When we want the user to display the coffee options, we look them up in the supplied file.</Label>
+        </Border>
+
+        <Label FontAttributes="Bold">Our coffees</Label>
         <CollectionView ItemsSource="{Binding Coffees}">
             <CollectionView.ItemTemplate>
                 <DataTemplate>

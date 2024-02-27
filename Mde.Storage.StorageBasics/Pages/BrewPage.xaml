@@ -8,7 +8,11 @@
         <ToolbarItem Text="Clear log" Command="{Binding ClearLogCommand}"></ToolbarItem>
     </ContentPage.ToolbarItems>
     <VerticalStackLayout>
-        
+
+        <Border Style="{StaticResource Info}">
+            <Label>This page keeps track of all the coffees that were brewed by our coffee machine. First, the coffees are read from the app package (see the other page for more info) and then - when we brew a coffee - we keep track of the coffee option that was brew along with the brewing time. We log this information to the App Data folder. This is a special folder that is backed up in the cloud. Futhermore, file stored in this folder will never be deleted by the operating system. It is the responsibility of the developer to keep this folder tidy!</Label>
+        </Border>
+
         <Picker 
             ItemsSource="{Binding Coffees}" 
             ItemDisplayBinding="{Binding Name}" 
@@ -16,7 +20,7 @@
 
         <Button Text="Brew" Command="{Binding BrewCommand}"></Button>
 
-        <Label Text="Logs"></Label>
+        <Label FontAttributes="Bold" Text="Logs"></Label>
         <CollectionView ItemsSource="{Binding Logs}">
             <CollectionView.ItemTemplate>
                 <DataTemplate>

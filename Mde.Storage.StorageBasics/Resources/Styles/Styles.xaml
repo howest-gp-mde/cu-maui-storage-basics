@@ -4,6 +4,12 @@
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
 
+    <Style x:Key="Info" TargetType="Border">
+        <Setter Property="Stroke" Value="{StaticResource Primary}" />
+        <Setter Property="BackgroundColor" Value="{StaticResource Secondary}" />
+        <Setter Property="Padding" Value="30" />
+    </Style>
+
     <Style TargetType="ContentPage">
         <Setter Property="Padding" Value="30" />
     </Style>

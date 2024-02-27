@@ -5,19 +5,24 @@
              xmlns:ffimageloading="clr-namespace:FFImageLoading.Maui;assembly=FFImageLoading.Maui"
              Title="🖼️ Image caching (built-in and third party)">
     <VerticalStackLayout>
-        <Label Text="Built-in MAUI approach (does not work on Windows)"></Label>
+
+        <Border Style="{StaticResource Info}">
+            <Label>This page demonstrates caching a image with the built-in MAUI features and also with a third party library. Visit this page, turn off your internet and come back to the page again. The images will still be there! They are stored in the cache after all ...</Label>
+        </Border>
+
+        <Label FontAttributes="Bold" Text="Built-in MAUI approach (does not work on Windows)"></Label>
         <Image WidthRequest="100" HorizontalOptions="Start">
             <Image.Source>
                 <UriImageSource 
-                    Uri="https://picsum.photos/200/300"
+                    Uri="https://upload.wikimedia.org/wikipedia/commons/c/c5/Roasted_coffee_beans.jpg"
                     CachingEnabled="True"
                     CacheValidity="1.10:00:00"
                     />
             </Image.Source>
         </Image>
 
-        <Label Text="Third party approaching using FFImageLoading.Maui:"></Label>
-        <ffimageloading:CachedImage Source="https://picsum.photos/200/300" WidthRequest="100" HorizontalOptions="Start"/>
+        <Label FontAttributes="Bold" Text="Third party approaching using FFImageLoading.Maui"></Label>
+        <ffimageloading:CachedImage Source="https://upload.wikimedia.org/wikipedia/commons/2/20/Coffee_cup_surrounded_by_coffee_beans.jpg" WidthRequest="100" HorizontalOptions="Start"/>
 
     </VerticalStackLayout>
 </ContentPage>
