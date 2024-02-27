@@ -1,4 +1,5 @@
-﻿using Microsoft.Maui.Storage;
+﻿using CommunityToolkit.Maui.Views;
+using Microsoft.Maui.Storage;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -29,6 +30,11 @@ namespace Mde.Storage.StorageBasics.Domain.Services
                     await stream.CopyToAsync(fileStream);
                 }
             }
+        }
+
+        public MediaSource GetMediaSource(string filename)
+        {
+            throw new NotImplementedException();
         }
     }
 }

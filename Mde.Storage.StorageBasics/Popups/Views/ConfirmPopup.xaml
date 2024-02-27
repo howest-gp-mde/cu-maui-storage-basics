@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<toolkit:Popup 
+    x:Class="Mde.Storage.StorageBasics.Popups.Views.ConfirmPopup"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
+    xmlns:vms="clr-namespace:Mde.Storage.StorageBasics.Popups.ViewModels"
+    x:DataType="vms:ConfirmPopupViewModel"
+    CanBeDismissedByTappingOutsideOfPopup="False">
+    <Frame BorderColor="{StaticResource Primary}">
+            <StackLayout>
+                <Label>Do you want store the video in cache, so that you don't have to download it again or can watch it offline?</Label>
+                <Button Text="Yes" Command="{Binding OnYesCommand}"></Button>
+                <Button Text="No" Command="{Binding OnNoCommand}"></Button>
+            </StackLayout>
+    </Frame>
+</toolkit:Popup>

@@ -9,4 +9,11 @@ public partial class FileCachingPage : ContentPage
 		InitializeComponent();
 		BindingContext = viewmodel;
 	}
+
+    protected override void OnAppearing()
+    {
+        base.OnAppearing();
+
+        (BindingContext as FileCachingViewModel).OnAppearingCommand.Execute(null);
+    }
 }

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CommunityToolkit.Maui.Views;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -10,5 +11,6 @@ namespace Mde.Storage.StorageBasics.Domain.Services
     {
         Task DownloadVideo(string filename, string url);
         bool CheckIfCached(string filename);
+        MediaSource GetMediaSource(string filename);
     }
 }

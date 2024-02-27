@@ -2,6 +2,8 @@
 using FFImageLoading.Maui;
 using Mde.Storage.StorageBasics.Domain.Services;
 using Mde.Storage.StorageBasics.Pages;
+using Mde.Storage.StorageBasics.Popups.ViewModels;
+using Mde.Storage.StorageBasics.Popups.Views;
 using Mde.Storage.StorageBasics.ViewModels;
 using Microsoft.Extensions.Logging;
 
@@ -31,6 +33,9 @@ namespace Mde.Storage.StorageBasics
             builder.Services.AddTransient<FileCachingPage>();
             builder.Services.AddTransient<FileCachingViewModel>();
 
+            //??
+            //builder.Services.AddTransient<ConfirmPopupViewModel>();
+
             Routing.RegisterRoute(nameof(CoffeeListPage), typeof(CoffeeListPage));
             Routing.RegisterRoute(nameof(BrewPage), typeof(BrewPage));
             Routing.RegisterRoute(nameof(ImageCachingPage), typeof(ImageCachingPage));
@@ -39,6 +44,8 @@ namespace Mde.Storage.StorageBasics
             builder.Services.AddTransient<ICoffeeService, AppPackageCoffeeService>();
             builder.Services.AddTransient<ICoffeeLoggingService, LocalLoggingService>();
             builder.Services.AddTransient<IVideoService, CacheVideoService>();
+
+            builder.Services.AddTransientPopup<ConfirmPopup, ConfirmPopupViewModel>();
 
 
             builder
