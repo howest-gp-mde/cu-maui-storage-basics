@@ -15,7 +15,7 @@
         </Label>
 
 
-        <toolkit:MediaElement Source="{Binding VideoSource}" />
+        <toolkit:MediaElement Source="{Binding VideoSource}" WidthRequest="400" HeightRequest="300" />
 
     </VerticalStackLayout>
 </ContentPage>
