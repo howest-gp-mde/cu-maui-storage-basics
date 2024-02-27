@@ -9,25 +9,25 @@
             Spacing="25">
 
             <Button
-                Text="Coffees" 
+                Text="Coffee options (Reading data from app package)" 
                 SemanticProperties.Hint="The coffees this our machine can brew"
                 Command="{Binding NavigateToCoffeeListPageCommand}"
                 HorizontalOptions="Fill" />
 
             <Button
-                 Text="Brew a coffee" 
+                 Text="Brew a coffee (reading and writing to/from App Data folder)" 
                  SemanticProperties.Hint="Brew a coffee"
                  Command="{Binding NavigateToBrewPageCommand}"
                  HorizontalOptions="Fill" />
 
             <Button
-                 Text="Image caching" 
+                 Text="Image caching (built-in and third party)" 
                  SemanticProperties.Hint="Image caching"
                  Command="{Binding NavigateToImageCachingPageCommand}"
                  HorizontalOptions="Fill" />
 
             <Button
-                 Text="File caching" 
+                 Text="Coffee Run Animation Film (writing to cache folder)" 
                  SemanticProperties.Hint="Image caching"
                  Command="{Binding NavigateToFileCachingPageCommand}"
                  HorizontalOptions="Fill" />
