@@ -1,33 +1,32 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="Mde.Storage.StorageBasics.MainPage">
+             x:Class="Mde.Storage.StorageBasics.MainPage"
+             Shell.NavBarIsVisible="False">
 
     <ScrollView>
-        <VerticalStackLayout
-            Padding="30,0"
-            Spacing="25">
+        <VerticalStackLayout>
 
             <Button
-                Text="Coffee options (Reading data from app package)" 
+                Text="🫘 Coffee options (Reading data from app package)" 
                 SemanticProperties.Hint="The coffees this our machine can brew"
                 Command="{Binding NavigateToCoffeeListPageCommand}"
                 HorizontalOptions="Fill" />
 
             <Button
-                 Text="Brew a coffee (reading and writing to/from App Data folder)" 
+                 Text="☕ Brew a coffee (reading and writing to/from App Data folder)" 
                  SemanticProperties.Hint="Brew a coffee"
                  Command="{Binding NavigateToBrewPageCommand}"
                  HorizontalOptions="Fill" />
 
             <Button
-                 Text="Image caching (built-in and third party)" 
+                 Text="🖼️ Image caching (built-in and third party)" 
                  SemanticProperties.Hint="Image caching"
                  Command="{Binding NavigateToImageCachingPageCommand}"
                  HorizontalOptions="Fill" />
 
             <Button
-                 Text="Coffee Run Animation Film (writing to cache folder)" 
+                 Text="🎞️ Coffee Run Animation Film (writing to cache folder)" 
                  SemanticProperties.Hint="Image caching"
                  Command="{Binding NavigateToFileCachingPageCommand}"
                  HorizontalOptions="Fill" />
