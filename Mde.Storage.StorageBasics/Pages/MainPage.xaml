@@ -5,33 +5,94 @@
              Shell.NavBarIsVisible="False">
 
     <ScrollView>
-        <VerticalStackLayout>
 
-            <Button
-                Text="🫘 Coffee options (Reading data from app package)" 
-                SemanticProperties.Hint="The coffees this our machine can brew"
-                Command="{Binding NavigateToCoffeeListPageCommand}"
-                HorizontalOptions="Fill" />
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+            </Grid.RowDefinitions>
 
-            <Button
-                 Text="☕ Brew a coffee (reading and writing to/from App Data folder)" 
-                 SemanticProperties.Hint="Brew a coffee"
-                 Command="{Binding NavigateToBrewPageCommand}"
-                 HorizontalOptions="Fill" />
+            <!--Block 1-->
+            <VerticalStackLayout Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="2">
+                <Label Style="{StaticResource Headline}" Text="🫘 Coffee options" />
+                <Label Style="{StaticResource SubHeadline}" Text="reading data from app package" />
+                <Label>
+                    <Label.FormattedText>
+                        <FormattedString>
+                            <Span FontAttributes="Bold" Text="The Coffee Connoisseur’s Catalog - "/>
+                            <Span>A list of brews as robust as a dark roast. Our virtual coffee machine knows its beans, and so does the app, with a preloaded list of coffee options that’s as integral as the crema on your espresso.</Span>
+                        </FormattedString>
+                    </Label.FormattedText>
+                </Label>
+                <Button
+                    Text="check out coffee options" 
+                    SemanticProperties.Hint="The coffees this our machine can brew"
+                    Command="{Binding NavigateToCoffeeListPageCommand}"
+                    HorizontalOptions="Fill" />
+            </VerticalStackLayout>
 
-            <Button
-                 Text="🖼️ Image caching (built-in and third party)" 
-                 SemanticProperties.Hint="Image caching"
-                 Command="{Binding NavigateToImageCachingPageCommand}"
-                 HorizontalOptions="Fill" />
+            <!--Block 2-->
+            <VerticalStackLayout Grid.Column="0" Grid.Row="1">
+                <Label Style="{StaticResource Headline}" Text="🖼️ Image caching" />
+                <Label Style="{StaticResource SubHeadline}" Text="built-in and third party" />
+                <Label>
+                    <Label.FormattedText>
+                        <FormattedString>
+                            <Span FontAttributes="Bold" Text="A Gallery of Beans and Dreams - "/>
+                            <Span>Here, images of coffee are cached like cherished memories. Turn off the internet, and they’re still there, waiting to greet you like the aroma of freshly ground beans.</Span>
+                        </FormattedString>
+                    </Label.FormattedText>
+                </Label>
+                <Button
+                    Text="show images" 
+                    SemanticProperties.Hint="Image caching"
+                    Command="{Binding NavigateToImageCachingPageCommand}"
+                    HorizontalOptions="Fill" />
+            </VerticalStackLayout>
 
-            <Button
-                 Text="🎞️ Coffee Run Animation Film (writing to cache folder)" 
-                 SemanticProperties.Hint="Image caching"
-                 Command="{Binding NavigateToFileCachingPageCommand}"
-                 HorizontalOptions="Fill" />
+            <!--Block 3-->
+            <VerticalStackLayout Grid.Column="1" Grid.Row="1">
+                <Label Style="{StaticResource Headline}" Text="☕ Brew a coffee" />
+                <Label Style="{StaticResource SubHeadline}" Text="reading and writing to/from App Data folder" />
+                <Label>
+                    <Label.FormattedText>
+                        <FormattedString>
+                            <Span FontAttributes="Bold" Text="Brewed to Perfection - "/>
+                            <Span>Track every coffee brewed by our virtual machine. It’s a logbook of liquid gold, with each entry a testament to your coffee journey, stored safely in the cloud like steam rising from a hot cup.</Span>
+                        </FormattedString>
+                    </Label.FormattedText>
+                </Label>
+                <Button
+                    Text="brew coffee" 
+                    SemanticProperties.Hint="Brew a coffee"
+                    Command="{Binding NavigateToBrewPageCommand}"
+                    HorizontalOptions="Fill" />
+            </VerticalStackLayout>
 
-        </VerticalStackLayout>
+            <!--Block 4-->
+            <VerticalStackLayout Grid.Column="0" Grid.Row="2" Grid.ColumnSpan="2">
+                <Label Style="{StaticResource Headline}" Text="🎞️ Coffee Run Animation Film" />
+                <Label Style="{StaticResource SubHeadline}" Text="reading and write to/from cache folder" />
+                <Label>
+                    <Label.FormattedText>
+                        <FormattedString>
+                            <Span FontAttributes="Bold" Text="The Coffee Run Experience - "/>
+                            <Span>Dive into the ‘Coffee Run’ animation film, a creative commons gem that’s as delightful to watch as your favorite coffee is to sip. Download it once, and it’s yours to replay, just like the lingering taste of that last espresso shot.</Span>
+                        </FormattedString>
+                    </Label.FormattedText>
+                </Label>
+                <Button
+                    Text="watch coffee run" 
+                    SemanticProperties.Hint="Image caching"
+                    Command="{Binding NavigateToFileCachingPageCommand}"
+                    HorizontalOptions="Fill" />
+            </VerticalStackLayout>
+        </Grid>
     </ScrollView>
 
 </ContentPage>

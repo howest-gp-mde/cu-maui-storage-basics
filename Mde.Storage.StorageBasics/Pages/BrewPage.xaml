@@ -2,7 +2,7 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Mde.Storage.StorageBasics.Pages.BrewPage"
-             Title="☕ Brew a coffee (reading and writing to/from App Data folder)">
+             Title="☕ Brew a coffee">
 
     <ContentPage.ToolbarItems>
         <ToolbarItem Text="Clear log" Command="{Binding ClearLogCommand}"></ToolbarItem>

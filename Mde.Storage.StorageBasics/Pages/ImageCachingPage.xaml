@@ -3,7 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Mde.Storage.StorageBasics.Pages.ImageCachingPage"
              xmlns:ffimageloading="clr-namespace:FFImageLoading.Maui;assembly=FFImageLoading.Maui"
-             Title="🖼️ Image caching (built-in and third party)">
+             Title="🖼️ Image caching">
     <VerticalStackLayout>
 
         <Border Style="{StaticResource Info}">
