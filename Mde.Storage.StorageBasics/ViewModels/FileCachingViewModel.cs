@@ -47,6 +47,9 @@ namespace Mde.Storage.StorageBasics.ViewModels
                 {
                     VideoSource = MediaSource.FromUri(Constants.VideoUrl);
                 }
+
+                WeakReferenceMessenger.Default.Unregister<PopupMessage>(this);
+
             });
         }
 
@@ -61,8 +64,6 @@ namespace Mde.Storage.StorageBasics.ViewModels
             {
                 VideoSource = MediaSource.FromFile(videoService.GetCachedVideoPath());
             }
-
-
         }
     }
 }

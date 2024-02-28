@@ -16,6 +16,9 @@ public partial class ConfirmPopup : Popup
         {
             //always close
             this.Close();
+
+            //unregister again, because otherwise the old popup (this) would still be 'listening' while its object has already been disposed of!
+            WeakReferenceMessenger.Default.Unregister<PopupMessage>(this);
         });
     }
  }
