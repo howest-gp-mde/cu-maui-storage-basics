@@ -6,7 +6,7 @@
 
     <Style x:Key="Info" TargetType="Border">
         <Setter Property="Stroke" Value="{StaticResource Primary}" />
-        <Setter Property="BackgroundColor" Value="{StaticResource Secondary}" />
+        <Setter Property="BackgroundColor" Value="{AppThemeBinding Light={StaticResource Secondary}, Dark={StaticResource PrimaryDark}}" />
         <Setter Property="Padding" Value="30" />
     </Style>
 
