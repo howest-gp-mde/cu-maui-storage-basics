@@ -33,9 +33,6 @@ namespace Mde.Storage.StorageBasics
             builder.Services.AddTransient<FileCachingPage>();
             builder.Services.AddTransient<FileCachingViewModel>();
 
-            //??
-            //builder.Services.AddTransient<ConfirmPopupViewModel>();
-
             Routing.RegisterRoute(nameof(CoffeeListPage), typeof(CoffeeListPage));
             Routing.RegisterRoute(nameof(BrewPage), typeof(BrewPage));
             Routing.RegisterRoute(nameof(ImageCachingPage), typeof(ImageCachingPage));
@@ -61,11 +58,6 @@ namespace Mde.Storage.StorageBasics
 
 #if DEBUG
     		builder.Logging.AddDebug();
-#endif
-
-#if IOS
-            AVAudioSession.SharedInstance().SetActive(true);
-            AVAudioSession.SharedInstance().SetCategory(AVAudioSessionCategory.Playback);
 #endif
 
             return builder.Build();
