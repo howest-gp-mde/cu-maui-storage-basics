@@ -4,22 +4,24 @@
     {
         private static readonly string cacheDir = FileSystem.Current.CacheDirectory;
 
-        public bool VideoIsCached()
-        {
-            List<string> allFiles = Directory
-                .EnumerateFiles(cacheDir)
-                .Select(Path.GetFileName)
-                .ToList();
+public bool VideoIsCached()
+{
+    var allFiles = Directory
+        .EnumerateFiles(cacheDir)
+        .Select(Path.GetFileName);
 
-            bool isCached = allFiles.Contains(Constants.VideoFile);
+    bool isCached = allFiles.Contains(Constants.VideoFile);
 
-            return isCached;
-        }
+    return isCached;
+}
 
         public async Task DownloadVideo()
         {
             HttpClient httpClient = new HttpClient();
-            httpClient.DefaultRequestHeaders.UserAgent.ParseAdd("StorageBasicsDemoApp"); //https://meta.wikimedia.org/wiki/User-Agent_policy
+
+            // Wikimedia explicity expects us to set the UserAgent header in our HTTP Requests in order to send back data
+            // https://meta.wikimedia.org/wiki/User-Agent_policy
+            httpClient.DefaultRequestHeaders.UserAgent.ParseAdd("StorageBasicsDemoApp"); 
 
             using (var stream = await httpClient.GetStreamAsync(Constants.VideoUrl))
             {
