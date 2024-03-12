@@ -2,6 +2,8 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Mde.Storage.StorageBasics.Pages.MainPage"
+             xmlns:viewmodels="clr-namespace:Mde.Storage.StorageBasics.ViewModels"
+             x:DataType="viewmodels:MainViewModel"
              Shell.NavBarIsVisible="False">
 
     <ScrollView>

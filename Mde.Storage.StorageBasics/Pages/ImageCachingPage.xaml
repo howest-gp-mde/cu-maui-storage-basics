@@ -3,6 +3,8 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Mde.Storage.StorageBasics.Pages.ImageCachingPage"
              xmlns:ffimageloading="clr-namespace:FFImageLoading.Maui;assembly=FFImageLoading.Maui"
+             xmlns:viewmodels="clr-namespace:Mde.Storage.StorageBasics.ViewModels"
+             x:DataType="viewmodels:ImageCachingViewModel"
              Title="🖼️ Image caching">
     <VerticalStackLayout>
 

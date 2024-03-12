@@ -2,6 +2,9 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Mde.Storage.StorageBasics.Pages.CoffeeListPage"
+             xmlns:models="clr-namespace:Mde.Storage.StorageBasics.Domain.Models"
+             xmlns:viewmodels="clr-namespace:Mde.Storage.StorageBasics.ViewModels"
+             x:DataType="viewmodels:CoffeeListViewModel"
              Title="🫘 Coffee options">
     <VerticalStackLayout>
 
@@ -12,7 +15,7 @@
         <Label FontAttributes="Bold">Our coffees</Label>
         <CollectionView ItemsSource="{Binding Coffees}">
             <CollectionView.ItemTemplate>
-                <DataTemplate>
+                <DataTemplate x:DataType="models:Coffee">
                     <ContentView>
                         <Label Text="{Binding Name}"></Label>
                     </ContentView>

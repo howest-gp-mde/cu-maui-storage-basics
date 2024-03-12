@@ -3,6 +3,8 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Mde.Storage.StorageBasics.Pages.FileCachingPage"
              xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
+             xmlns:viewmodels="clr-namespace:Mde.Storage.StorageBasics.ViewModels"
+             x:DataType="viewmodels:FileCachingViewModel"
              Title="🎞️ Coffee Run Animation Film"
              Unloaded="ContentPage_Unloaded">
     <VerticalStackLayout Spacing="20" Padding="20">
