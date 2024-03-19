@@ -6,7 +6,6 @@ using System.Windows.Input;
 
 namespace Mde.Storage.StorageBasics.ViewModels
 {
-    //displaying coffees is duplicate code (cfr. listpage) --> put in basevm or not?
     public partial class BrewViewModel : ObservableObject
     {
         private ICoffeeService coffeeService;
@@ -44,9 +43,12 @@ namespace Mde.Storage.StorageBasics.ViewModels
 
         public async Task Refresh()
         {
-            var coffees = await coffeeService.GetCoffees();
-            Coffees = new ObservableCollection<Coffee>(coffees);
-            SelectedCoffee = Coffees[0];
+            if (Coffees is null)
+            {
+                var coffees = await coffeeService.GetCoffees();
+                Coffees = new ObservableCollection<Coffee>(coffees);
+                SelectedCoffee = Coffees[0];
+            }
 
             var logs = coffeeLoggingService.GetLogs();            
             Logs = new ObservableCollection<LogEntry>(logs);

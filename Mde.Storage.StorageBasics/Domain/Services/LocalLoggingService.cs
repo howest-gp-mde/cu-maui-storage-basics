@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace Mde.Storage.StorageBasics.Domain.Services
 {
-    internal class LocalLoggingService : ICoffeeLoggingService
+    public class LocalLoggingService : ICoffeeLoggingService
     {
         const string filename = "logs.json";
         static string logfilePath = Path.Combine(FileSystem.Current.AppDataDirectory, filename);

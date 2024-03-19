@@ -18,10 +18,11 @@
                 <UriImageSource 
                     Uri="https://upload.wikimedia.org/wikipedia/commons/c/c5/Roasted_coffee_beans.jpg"
                     CachingEnabled="True"
-                    CacheValidity="1.10:00:00"
-                    />
+                    CacheValidity="5:00:00:00" />
             </Image.Source>
         </Image>
+
+        <Image Source="{Binding CoffeePlantImage}" WidthRequest="100" HorizontalOptions="Start"></Image>
 
         <Label FontAttributes="Bold" Text="Third party approaching using FFImageLoading.Maui"></Label>
         <ffimageloading:CachedImage Source="https://upload.wikimedia.org/wikipedia/commons/2/20/Coffee_cup_surrounded_by_coffee_beans.jpg" WidthRequest="100" HorizontalOptions="Start"/>

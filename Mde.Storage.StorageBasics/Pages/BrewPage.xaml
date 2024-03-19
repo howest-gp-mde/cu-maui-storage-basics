@@ -23,13 +23,16 @@
         <Button Text="Brew" Command="{Binding BrewCommand}"></Button>
 
         <Label FontAttributes="Bold" Text="Logs"></Label>
-        <CollectionView ItemsSource="{Binding Logs}">
-            <CollectionView.ItemTemplate>
+        <VerticalStackLayout BindableLayout.ItemsSource="{Binding Logs}" Padding="0">
+            <BindableLayout.EmptyView>
+                <Label>There are no logs.</Label>
+            </BindableLayout.EmptyView>
+            <BindableLayout.ItemTemplate>
                 <DataTemplate>
                     <Label Text="{Binding .}"></Label>
                 </DataTemplate>
-            </CollectionView.ItemTemplate>            
-        </CollectionView>
+            </BindableLayout.ItemTemplate>
+        </VerticalStackLayout>
         
     </VerticalStackLayout>
 </ContentPage>

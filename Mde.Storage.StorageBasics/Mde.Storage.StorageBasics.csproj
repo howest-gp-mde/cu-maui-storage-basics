@@ -23,7 +23,7 @@
 		<ApplicationTitle>Local Storage</ApplicationTitle>
 
 		<!-- App Identifier -->
-		<ApplicationId>com.companyname.mde.storage.storagebasics</ApplicationId>
+		<ApplicationId>be.howest.prog.mde.storagebasics</ApplicationId>
 
 		<!-- Versions -->
 		<ApplicationDisplayVersion>1.0</ApplicationDisplayVersion>
