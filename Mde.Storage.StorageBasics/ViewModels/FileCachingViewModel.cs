@@ -1,4 +1,5 @@
 ﻿using CommunityToolkit.Maui;
+using CommunityToolkit.Maui.Core;
 using CommunityToolkit.Maui.Views;
 using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Messaging;
@@ -17,6 +18,7 @@ namespace Mde.Storage.StorageBasics.ViewModels
     public class FileCachingViewModel : ObservableObject
     {
         private readonly IVideoService videoService;
+        private readonly IPopupService popupService;
         private MediaSource videoSource;
 
         public MediaSource VideoSource
@@ -32,9 +34,10 @@ namespace Mde.Storage.StorageBasics.ViewModels
         }
         public ICommand OnAppearingCommand => new Command(async () => await InitializePage());
 
-        public FileCachingViewModel(IVideoService videoService)
+        public FileCachingViewModel(IVideoService videoService, IPopupService popupService)
         {
             this.videoService = videoService;
+            this.popupService = popupService;
 
             WeakReferenceMessenger.Default.Register<PopupMessage>(this, async (recipient, popupMessage) =>
             {
@@ -57,7 +60,6 @@ namespace Mde.Storage.StorageBasics.ViewModels
         {
             if (!videoService.VideoIsCached())
             {
-                var popupService = new PopupService();
                 await popupService.ShowPopupAsync<ConfirmPopupViewModel>();
             }
             else
