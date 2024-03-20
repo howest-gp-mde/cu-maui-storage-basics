@@ -4,16 +4,16 @@
     {
         private static readonly string cacheDir = FileSystem.Current.CacheDirectory;
 
-public bool VideoIsCached()
-{
-    var allFiles = Directory
-        .EnumerateFiles(cacheDir)
-        .Select(Path.GetFileName);
+        public bool VideoIsCached()
+        {
+            var allFiles = Directory
+                .EnumerateFiles(cacheDir)
+                .Select(Path.GetFileName);
 
-    bool isCached = allFiles.Contains(Constants.VideoFile);
+            bool isCached = allFiles.Contains(Constants.VideoFile);
 
-    return isCached;
-}
+            return isCached;
+        }
 
         public async Task DownloadVideo()
         {
