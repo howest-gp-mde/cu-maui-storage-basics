@@ -36,6 +36,8 @@ namespace Mde.Storage.StorageBasics.Domain.Services
 
             var newLog = new LogEntry { BrewTime = DateTime.UtcNow, Coffee = coffee };
             var logEntry = JsonSerializer.Serialize(newLog);
+
+            //write the entry on a new line, directly in the log file
             File.AppendAllLines(logfilePath, [logEntry]);
         }
 
