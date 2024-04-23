@@ -13,6 +13,6 @@ public partial class BrewPage : ContentPage
     protected override void OnAppearing()
     {
         var viewmodel = BindingContext as BrewViewModel;
-        viewmodel?.OnAppearing?.Execute(null);
+        viewmodel?.OnAppearingCommand?.Execute(null);
     }
 }

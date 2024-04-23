@@ -32,7 +32,7 @@ namespace Mde.Storage.StorageBasics.ViewModels
             set { SetProperty(ref logs, value); }
         }
 
-        public ICommand OnAppearing => new Command(async () => await Refresh());
+        public ICommand OnAppearingCommand => new Command(async () => await Refresh());
         public ICommand BrewCommand => new Command(async ()  => await Brew());
         public ICommand ClearLogCommand => new Command(async ()  => await ClearLog());
         public BrewViewModel(ICoffeeService coffeeService, ICoffeeLoggingService coffeeLoggingService)
