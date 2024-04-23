@@ -23,7 +23,7 @@ namespace Mde.Storage.StorageBasics.ViewModels
             set { SetProperty(ref coffees, value); }
         }
 
-        public ICommand OnAppearing => new Command(async () => await Refresh());
+        public ICommand OnAppearingCommand => new Command(async () => await Refresh());
         public CoffeeListViewModel(ICoffeeService coffeeService)
         {
             this.coffeeService = coffeeService;

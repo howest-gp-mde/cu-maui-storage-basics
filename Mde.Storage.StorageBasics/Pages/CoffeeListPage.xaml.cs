@@ -13,6 +13,6 @@ public partial class CoffeeListPage : ContentPage
     protected override void OnAppearing()
     {
         var viewmodel = BindingContext as CoffeeListViewModel;
-        viewmodel?.OnAppearing?.Execute(null);
+        viewmodel?.OnAppearingCommand?.Execute(null);
     }
 }
