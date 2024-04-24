@@ -1,6 +1,6 @@
 ﻿using CommunityToolkit.Maui;
 using FFImageLoading.Maui;
-using Mde.Storage.StorageBasics.Domain.Services;
+using Mde.Storage.StorageBasics.Core.Services;
 using Mde.Storage.StorageBasics.Pages;
 using Mde.Storage.StorageBasics.Popups.ViewModels;
 using Mde.Storage.StorageBasics.Popups.Views;

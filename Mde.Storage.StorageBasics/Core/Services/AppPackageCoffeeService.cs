@@ -1,12 +1,7 @@
-﻿using Mde.Storage.StorageBasics.Domain.Models;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+﻿using Mde.Storage.StorageBasics.Core.Models;
 using System.Text.Json;
-using System.Threading.Tasks;
 
-namespace Mde.Storage.StorageBasics.Domain.Services
+namespace Mde.Storage.StorageBasics.Core.Services
 {
     public class AppPackageCoffeeService : ICoffeeService
     {
@@ -14,7 +9,7 @@ namespace Mde.Storage.StorageBasics.Domain.Services
         {
             PropertyNamingPolicy = JsonNamingPolicy.CamelCase
         };
-        public async Task<IEnumerable<Coffee>> GetCoffees()
+        public async Task<IEnumerable<Coffee>> GetCoffeesAsync()
         {
             using Stream fileStream = await FileSystem.Current.OpenAppPackageFileAsync("Coffees/coffees.json");
             using StreamReader reader = new StreamReader(fileStream); 

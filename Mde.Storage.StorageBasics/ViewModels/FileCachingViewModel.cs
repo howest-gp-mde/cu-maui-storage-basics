@@ -1,16 +1,10 @@
-﻿using CommunityToolkit.Maui;
-using CommunityToolkit.Maui.Core;
+﻿using CommunityToolkit.Maui.Core;
 using CommunityToolkit.Maui.Views;
 using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Messaging;
-using Mde.Storage.StorageBasics.Domain.Services;
+using Mde.Storage.StorageBasics.Core.Services;
 using Mde.Storage.StorageBasics.Messages;
 using Mde.Storage.StorageBasics.Popups.ViewModels;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Input;
 
 namespace Mde.Storage.StorageBasics.ViewModels
@@ -32,7 +26,7 @@ namespace Mde.Storage.StorageBasics.ViewModels
                 SetProperty(ref videoSource, value);
             }
         }
-        public ICommand OnAppearingCommand => new Command(async () => await InitializePage());
+        public ICommand OnAppearingCommand => new Command(async () => await InitializeAsync());
 
         public FileCachingViewModel(IVideoService videoService, IPopupService popupService)
         {
@@ -43,7 +37,7 @@ namespace Mde.Storage.StorageBasics.ViewModels
             {
                 if (popupMessage.Value == "yes")
                 {
-                    await videoService.DownloadVideo();
+                    await videoService.DownloadVideoAsync();
                     VideoSource = MediaSource.FromFile(videoService.GetCachedVideoPath());
                 }
                 else if (popupMessage.Value == "no")
@@ -56,7 +50,7 @@ namespace Mde.Storage.StorageBasics.ViewModels
             });
         }
 
-        private async Task InitializePage()
+        private async Task InitializeAsync()
         {
             if (!videoService.VideoIsCached())
             {

@@ -1,36 +1,31 @@
 ﻿using CommunityToolkit.Mvvm.ComponentModel;
-using Mde.Storage.StorageBasics.Domain.Services;
 using Mde.Storage.StorageBasics.Pages;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Input;
 
 namespace Mde.Storage.StorageBasics.ViewModels
 {
     public partial class MainViewModel : ObservableObject
     {
-        public ICommand NavigateToCoffeeListPageCommand => new Command(async () => await NavigateToCoffeeListPage());
-        public ICommand NavigateToBrewPageCommand => new Command(async () => await NavigateToBrewPage());
-        public ICommand NavigateToImageCachingPageCommand => new Command(async () => await NavigateToImageCachingPage());
-        public ICommand NavigateToFileCachingPageCommand => new Command(async () => await NavigateToFileCachingPage());
-        public async Task NavigateToCoffeeListPage()
+        public ICommand NavigateToCoffeeListPageCommand => new Command(async () => await NavigateToCoffeeListPageAsync());
+        public ICommand NavigateToBrewPageCommand => new Command(async () => await NavigateToBrewPageAsync());
+        public ICommand NavigateToImageCachingPageCommand => new Command(async () => await NavigateToImageCachingPageAsync());
+        public ICommand NavigateToFileCachingPageCommand => new Command(async () => await NavigateToFileCachingPageAsync());
+        public async Task NavigateToCoffeeListPageAsync()
         {
             await Shell.Current.GoToAsync(nameof(CoffeeListPage));
         }
 
-        public async Task NavigateToBrewPage()
+        public async Task NavigateToBrewPageAsync()
         {
             await Shell.Current.GoToAsync(nameof(BrewPage));
         }        
         
-        public async Task NavigateToImageCachingPage()
+        public async Task NavigateToImageCachingPageAsync()
         {
             await Shell.Current.GoToAsync(nameof(ImageCachingPage));
         }
-        public async Task NavigateToFileCachingPage()
+
+        public async Task NavigateToFileCachingPageAsync()
         {
             await Shell.Current.GoToAsync(nameof(FileCachingPage));
         }
