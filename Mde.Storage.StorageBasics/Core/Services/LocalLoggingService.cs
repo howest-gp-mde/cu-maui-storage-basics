@@ -5,15 +5,23 @@ namespace Mde.Storage.StorageBasics.Core.Services
 {
     public class LocalLoggingService : ICoffeeLoggingService
     {
-        const string filename = "logs.json";
+        const string filename = "brews.log";
         static string logfilePath = Path.Combine(FileSystem.Current.AppDataDirectory, filename);
 
+        /// <summary>
+        /// Returns all logs from the log file
+        /// </summary>
         public IEnumerable<LogEntry> GetLogs()
         {
             if (File.Exists(logfilePath))
             {
-                var content = File.ReadAllText(logfilePath);
-                return JsonSerializer.Deserialize<List<LogEntry>>(content);
+                string[] logEntries = File.ReadAllLines(logfilePath);
+                if (logEntries == null) return [];
+
+                //Log files typically store entries line per line.
+                //In this case they are single json objects so we need to wrap them in an array.
+                string joinedEntries = $"[{logEntries.Aggregate((current, next) => $"{current},{next}")}]";
+                return JsonSerializer.Deserialize<List<LogEntry>>(joinedEntries);
             }
             else
             {
@@ -27,12 +35,10 @@ namespace Mde.Storage.StorageBasics.Core.Services
             Directory.CreateDirectory(directory);
 
             var newLog = new LogEntry { BrewTime = DateTime.UtcNow, Coffee = coffee };
-            var logs = (List<LogEntry>)GetLogs();
-            logs.Add(newLog);
+            var logLine = JsonSerializer.Serialize(newLog);
 
-            var serializedLogs = JsonSerializer.Serialize(logs);
-
-            File.WriteAllText(logfilePath, serializedLogs);
+            //write the log entry on a new line, directly in the log file
+            File.AppendAllLines(logfilePath, [logLine]);
         }
 
         public void Clear()
