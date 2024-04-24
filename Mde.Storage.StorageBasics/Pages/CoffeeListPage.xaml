@@ -2,7 +2,7 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Mde.Storage.StorageBasics.Pages.CoffeeListPage"
-             xmlns:models="clr-namespace:Mde.Storage.StorageBasics.Domain.Models"
+             xmlns:models="clr-namespace:Mde.Storage.StorageBasics.Core.Models"
              xmlns:viewmodels="clr-namespace:Mde.Storage.StorageBasics.ViewModels"
              x:DataType="viewmodels:CoffeeListViewModel"
              Title="🫘 Coffee options">

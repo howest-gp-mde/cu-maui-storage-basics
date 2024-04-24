@@ -1,6 +1,6 @@
 ﻿using CommunityToolkit.Mvvm.ComponentModel;
-using Mde.Storage.StorageBasics.Domain.Models;
-using Mde.Storage.StorageBasics.Domain.Services;
+using Mde.Storage.StorageBasics.Core.Models;
+using Mde.Storage.StorageBasics.Core.Services;
 using System.Collections.ObjectModel;
 using System.Windows.Input;
 
@@ -32,20 +32,20 @@ namespace Mde.Storage.StorageBasics.ViewModels
             set { SetProperty(ref logs, value); }
         }
 
-        public ICommand OnAppearingCommand => new Command(async () => await Refresh());
-        public ICommand BrewCommand => new Command(async ()  => await Brew());
-        public ICommand ClearLogCommand => new Command(async ()  => await ClearLog());
+        public ICommand OnAppearingCommand => new Command(async () => await RefreshAsync());
+        public ICommand BrewCommand => new Command(async ()  => await BrewAsync());
+        public ICommand ClearLogCommand => new Command(async ()  => await ClearLogAsync());
         public BrewViewModel(ICoffeeService coffeeService, ICoffeeLoggingService coffeeLoggingService)
         {
             this.coffeeService = coffeeService;
             this.coffeeLoggingService = coffeeLoggingService;
         }
 
-        public async Task Refresh()
+        public async Task RefreshAsync()
         {
             if (Coffees is null)
             {
-                var coffees = await coffeeService.GetCoffees();
+                var coffees = await coffeeService.GetCoffeesAsync();
                 Coffees = new ObservableCollection<Coffee>(coffees);
                 SelectedCoffee = Coffees[0];
             }
@@ -54,16 +54,16 @@ namespace Mde.Storage.StorageBasics.ViewModels
             Logs = new ObservableCollection<LogEntry>(logs);
         }
 
-        public async Task Brew()
+        public async Task BrewAsync()
         {
             coffeeLoggingService.Log(SelectedCoffee);
-            await Refresh();
+            await RefreshAsync();
         }
 
-        public async Task ClearLog()
+        public async Task ClearLogAsync()
         {
             coffeeLoggingService.Clear();
-            await Refresh();
+            await RefreshAsync();
         }
     }
 }

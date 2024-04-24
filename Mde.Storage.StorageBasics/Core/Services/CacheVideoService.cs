@@ -1,4 +1,4 @@
-﻿namespace Mde.Storage.StorageBasics.Domain.Services
+﻿namespace Mde.Storage.StorageBasics.Core.Services
 {
     public class CacheVideoService : IVideoService
     {
@@ -15,7 +15,7 @@
             return isCached;
         }
 
-        public async Task DownloadVideo()
+        public async Task DownloadVideoAsync()
         {
             HttpClient httpClient = new HttpClient();
 

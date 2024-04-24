@@ -1,7 +1,7 @@
-﻿using Mde.Storage.StorageBasics.Domain.Models;
+﻿using Mde.Storage.StorageBasics.Core.Models;
 using System.Text.Json;
 
-namespace Mde.Storage.StorageBasics.Domain.Services
+namespace Mde.Storage.StorageBasics.Core.Services
 {
     public class LocalLoggingService : ICoffeeLoggingService
     {

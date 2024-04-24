@@ -7,12 +7,14 @@
              x:DataType="viewmodels:FileCachingViewModel"
              Title="🎞️ Coffee Run Animation Film"
              Unloaded="ContentPage_Unloaded">
-    <VerticalStackLayout Spacing="20" Padding="20">
-        <Border Style="{StaticResource Info}">
-            <Label>The 'Coffee Run' animation film was released under the CC license and is used in this example. You can download the movie to disk by clicking on the 'download file' button. It is then downloaded to the cache folder of the device, which means that the operating can delete the file any time when it sees fit. When we have the file on disk, we'll always read it from disk to avoid the extra download. Isn't that user-friendly?!</Label>
-        </Border>
-        <toolkit:MediaElement x:Name="mediaElement" Source="{Binding VideoSource}" WidthRequest="400" HeightRequest="300" />
-        <Label>'Coffee Run' was directed by Hjalti Hjalmarsson and produced by the team at Blender Studio. Fueled by caffeine, a young woman runs through the bittersweet memories of her past relationship.</Label>
-        <Label>Interested in other open films? Head over to https://studio.blender.org/films. Only interested in this one? You can find it here: https://studio.blender.org/films/coffee-run!</Label>
-    </VerticalStackLayout>
+    <ScrollView>
+        <VerticalStackLayout Spacing="20" Padding="20">
+            <Border Style="{StaticResource Info}">
+                <Label>The 'Coffee Run' animation film was released under the CC license and is used in this example. You can download the movie to disk by clicking on the 'download file' button. It is then downloaded to the cache folder of the device, which means that the operating can delete the file any time when it sees fit. When we have the file on disk, we'll always read it from disk to avoid the extra download. Isn't that user-friendly?!</Label>
+            </Border>
+            <toolkit:MediaElement x:Name="mediaElement" Source="{Binding VideoSource}" WidthRequest="400" HeightRequest="300" />
+            <Label>'Coffee Run' was directed by Hjalti Hjalmarsson and produced by the team at Blender Studio. Fueled by caffeine, a young woman runs through the bittersweet memories of her past relationship.</Label>
+            <Label>Interested in other open films? Head over to https://studio.blender.org/films. Only interested in this one? You can find it here: https://studio.blender.org/films/coffee-run!</Label>
+        </VerticalStackLayout>
+    </ScrollView>
 </ContentPage>
